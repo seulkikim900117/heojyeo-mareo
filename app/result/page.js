@@ -69,6 +69,7 @@ function ResultBody() {
   const get = (k) => sp.get(k) ?? "";
         const p1 = {
                   name: get("n1"),
+                gender: get("g1") || null,
                   year: +get("y1"),
                   month: +get("m1"),
                   day: +get("d1"),
@@ -78,6 +79,7 @@ function ResultBody() {
         };
         const p2 = {
                   name: get("n2"),
+                gender: get("g2") || null,
                   year: +get("y2"),
                   month: +get("m2"),
                   day: +get("d2"),
