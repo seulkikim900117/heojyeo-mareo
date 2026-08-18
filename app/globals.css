@@ -4,8 +4,8 @@
    ============================================================ */
 
 :root {
-  --blue: #3182f6; /* 토스 블루 */
-  --blue-dark: #1b64da;
+    --blue: #ff2d87; /* 핫핑크 */
+    --blue-dark: #d61a6f;
   --pink: #f04452;
   --bg: #ffffff;
   --bg-soft: #f9fafb;
@@ -207,7 +207,7 @@ select:focus {
 .gauge-fill {
   height: 100%;
   border-radius: 8px;
-  background: linear-gradient(90deg, #f04452, #f6a325, #3182f6);
+    background: linear-gradient(90deg, #f6a325, #ff5f9e, #ff2d87);
   transition: width 1s ease;
 }
 
@@ -221,7 +221,7 @@ select:focus {
   margin: 3px 4px 3px 0;
 }
 .tag-good {
-  background: #e8f3ff;
+    background: #ffe6f2;
   color: var(--blue-dark);
 }
 .tag-bad {
