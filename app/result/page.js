@@ -12,6 +12,7 @@ import { pillarText, ELEMENTS, ELEMENT_EMOJI } from "../../lib/saju";
 // ============================================================
 
 const ELEM_COLORS = ["#2e9e5b", "#f04452", "#b98a3c", "#8b95a1", "#3182f6"]; // 목화토금수
+const KAKAO_JS_KEY = ""; // developers.kakao.com JavaScript 키 (없으면 기본 공유 폴백)
 
 function SajuCard({ title, saju, name }) {
         const p = saju.pillars;
@@ -92,6 +93,7 @@ function ResultBody() {
             const t = setTimeout(() => setRevealed(true), 400);
             return () => clearTimeout(t);
   }, []);
+        useEffect(() => { if (!KAKAO_JS_KEY || window.Kakao) return; const s = document.createElement("script"); s.src = "https://t1.kakaocdn.net/kakao_js_sdk/2.7.4/kakao.min.js"; s.onload = () => window.Kakao.init(KAKAO_JS_KEY); document.head.appendChild(s); }, []); // 카카오 SDK 로드
 
   if (!p1.year || !p2.year || !p1.month || !p2.month || !p1.day || !p2.day) {
             return (
@@ -123,6 +125,7 @@ function ResultBody() {
             setCopied(true);
             setTimeout(() => setCopied(false), 2000);
   };
+const shareKakao = () => { const url = window.location.href; if (KAKAO_JS_KEY && window.Kakao && window.Kakao.Share) { window.Kakao.Share.sendDefault({ objectType: "text", text: '💘 헤어져? 말어?\n' + p1.name + ' ❤ ' + p2.name + ' 궁합 ' + r.score + '점 — "' + r.verdict + '"', link: { mobileWebUrl: url, webUrl: url } }); } else { share(); } };
 
   return (
             <main className="wrap">
@@ -180,6 +183,7 @@ function ResultBody() {
         <SajuCard title="💘" saju={r.saju2} name={p2.name} />
 
         <div style={{ marginTop: 24, display: "grid", gap: 10 }}>
+                  <button className="btn btn-kakao" onClick={shareKakao}>카카오톡으로 공유 💬</button>
           <button className="btn btn-primary" onClick={share}>
           {copied ? "링크 복사 완료! ✅" : "결과 공유하기 🔗"}
 </button>
