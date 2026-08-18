@@ -12,8 +12,7 @@ import { pillarText, ELEMENTS, ELEMENT_EMOJI } from "../../lib/saju";
 // ============================================================
 
 const ELEM_COLORS = ["#2e9e5b", "#f04452", "#b98a3c", "#8b95a1", "#3182f6"]; // 목화토금수
-const KAKAO_JS_KEY = ""; // developers.kakao.com JavaScript 키 (없으면 기본 공유 폴백)
-
+const KAKAO_JS_KEY = "2942cbcd860f6ea0778deb3c3b90d1f7"; // developers.kakao.com JavaScript 키
 function SajuCard({ title, saju, name }) {
         const p = saju.pillars;
         const total = saju.elements.reduce((a, b) => a + b, 0);
