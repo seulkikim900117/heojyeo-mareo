@@ -127,7 +127,7 @@ function ResultBody() {
 const shareKakao = () => { const url = window.location.href; if (KAKAO_JS_KEY && window.Kakao && window.Kakao.Share) { window.Kakao.Share.sendDefault({ objectType: "text", text: '💘 헤어져? 말어?\n' + p1.name + ' ❤ ' + p2.name + ' 궁합 ' + r.score + '점 — "' + r.verdict + '"', link: { mobileWebUrl: url, webUrl: url } }); } else { share(); } };
 
   return (
-            <main className="wrap">
+                      <main className="wrap wrap-wide">
               <div style={{ paddingTop: 40 }} className="fade-up">
                 <Link href="/" className="muted">
                   ← 홈으로
