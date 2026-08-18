@@ -17,7 +17,7 @@ export default function Home() {
             marginTop: 8,
           }}
         >
-          헤어져? <span style={{ color: "#3182f6" }}>말어?</span>
+                    헤어져? <span style={{ color: "#ff2d87" }}>말어?</span>
         </h1>
         <p style={{ marginTop: 14, fontSize: 17, color: "#4e5968" }}>
           싸울 때마다 고민되죠.
