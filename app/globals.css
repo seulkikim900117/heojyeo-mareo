@@ -73,6 +73,7 @@ a {
   background: var(--card);
   color: var(--ink-2);
 }
+.btn-kakao { background: #fee500; color: #191919; } .btn-kakao:hover { background: #f5dc00; }
 
 /* ---------- 카드 ---------- */
 .card {
