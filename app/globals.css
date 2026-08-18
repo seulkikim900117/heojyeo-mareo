@@ -1,0 +1,275 @@
+/* ============================================================
+   헤어져? 말어? — 글로벌 스타일 (토스 스타일 참고)
+   : 흰 배경, 굵은 타이포, 넉넉한 여백, 둥근 카드, 파란 CTA
+   ============================================================ */
+
+:root {
+    --blue: #ff2d87; /* 핫핑크 */
+    --blue-dark: #d61a6f;
+  --pink: #f04452;
+  --bg: #ffffff;
+  --bg-soft: #f9fafb;
+  --card: #f2f4f6;
+  --ink: #191f28;
+  --ink-2: #4e5968;
+  --ink-3: #8b95a1;
+  --line: #e5e8eb;
+  --radius: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+    "Apple SD Gothic Neo", "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.wrap {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 20px 80px;
+  min-height: 100vh;
+}
+
+/* ---------- 버튼 ---------- */
+.btn {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-radius: 16px;
+  padding: 17px 24px;
+  font-size: 17px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.08s ease, background 0.15s ease;
+}
+.btn:active {
+  transform: scale(0.98);
+}
+.btn-primary {
+  background: var(--blue);
+  color: #fff;
+}
+.btn-primary:hover {
+  background: var(--blue-dark);
+}
+.btn-ghost {
+  background: var(--card);
+  color: var(--ink-2);
+}
+.btn-kakao { background: #fee500; color: #191919; } .btn-kakao:hover { background: #f5dc00; }
+
+/* ---------- 카드 ---------- */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 16px;
+}
+.card-white {
+  background: #fff;
+  border: 1px solid var(--line);
+}
+
+/* ---------- 폼 ---------- */
+label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-3);
+  margin: 14px 0 6px;
+}
+input,
+select {
+  width: 100%;
+  border: 1.5px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
+  padding: 14px 16px;
+  font-size: 16px;
+  font-family: inherit;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.15s;
+}
+input:focus,
+select:focus {
+  border-color: var(--blue);
+}
+.row2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.row3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+/* ---------- 사주 표 ---------- */
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  text-align: center;
+}
+.pillar {
+  background: #fff;
+  border-radius: 14px;
+  padding: 12px 4px;
+  border: 1px solid var(--line);
+}
+.pillar .p-label {
+  font-size: 11px;
+  color: var(--ink-3);
+  font-weight: 600;
+}
+.pillar .p-char {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+/* ---------- 오행 바 ---------- */
+.elem-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 6px 0;
+  font-size: 13px;
+}
+.elem-name {
+  width: 44px;
+  color: var(--ink-2);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.elem-track {
+  flex: 1;
+  height: 10px;
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.elem-fill {
+  height: 100%;
+  border-radius: 6px;
+  min-width: 0;
+  transition: width 0.6s ease;
+}
+.elem-count {
+  width: 20px;
+  text-align: right;
+  color: var(--ink-3);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- 점수 게이지 ---------- */
+.gauge {
+  text-align: center;
+  padding: 36px 0 20px;
+}
+.gauge .score {
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -2px;
+}
+.gauge .score small {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--ink-3);
+}
+.gauge-track {
+  height: 12px;
+  background: var(--card);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 18px 0 6px;
+}
+.gauge-fill {
+  height: 100%;
+  border-radius: 8px;
+    background: linear-gradient(90deg, #f6a325, #ff5f9e, #ff2d87);
+  transition: width 1s ease;
+}
+
+/* ---------- 기타 ---------- */
+.tag {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 6px 10px;
+  margin: 3px 4px 3px 0;
+}
+.tag-good {
+    background: #ffe6f2;
+  color: var(--blue-dark);
+}
+.tag-bad {
+  background: #ffeef0;
+  color: var(--pink);
+}
+.section-title {
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+.muted {
+  color: var(--ink-3);
+  font-size: 12px;
+}
+.fade-up {
+  animation: fadeUp 0.5s ease both;
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+/* ---------- PC(넓은 화면) 레이아웃 ---------- */
+@media (min-width: 860px) {
+   .wrap-wide { max-width: 920px; }
+   .wrap-wide .fade-up { display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px; align-items: start; }
+   .wrap-wide .fade-up > a, .wrap-wide .fade-up > h1, .wrap-wide .fade-up > h2, .wrap-wide .fade-up > p, .wrap-wide .fade-up > div:not(.card) { grid-column: 1 / -1; }
+   .wrap-wide .fade-up > button, .wrap-wide .fade-up > div:has(> .btn) { grid-column: 1 / -1; width: 100%; max-width: 480px; margin-left: auto; margin-right: auto; }
+}
+
+/* ---------- v2 엔진용 추가 스타일 ---------- */
+.pillar .p-god { font-size: 10px; color: var(--ink-3); font-weight: 600; margin-top: 2px; }
+.mini-title { font-size: 12px; font-weight: 700; color: var(--ink-3); margin: 16px 0 6px; letter-spacing: 0.2px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font-size: 12px; font-weight: 600; background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px; color: var(--ink-2); }
+.chip-off { opacity: 0.4; }
+.daeun { display: flex; flex-wrap: wrap; gap: 6px; }
+.daeun-item { font-size: 12px; font-weight: 600; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 4px 8px; color: var(--ink-2); }
+.daeun-item b { color: var(--blue); margin-right: 4px; }
+.muted-p { font-size: 13px; color: var(--ink-2); line-height: 1.65; margin-top: 4px; }
+
+.elem-fill { display: block; }
+.elem-track { display: block; }
