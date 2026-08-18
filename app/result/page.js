@@ -196,7 +196,7 @@ const shareKakao = () => { const url = window.location.href; if (KAKAO_JS_KEY &&
           style={{ textAlign: "center", marginTop: 40, fontSize: 11 }}
         >
           본 결과는 전통 사주 이론을 재미로 재구성한 것입니다. 진짜 결정은 늘 두
-          분의 몫! 💙
+          분의 몫! 💖
                 </p>
                 </div>
                 </main>
