@@ -131,7 +131,7 @@ export default function TestPage() {
   };
 
   return (
-            <main className="wrap">
+                      <main className="wrap wrap-wide">
               <div style={{ paddingTop: 40 }} className="fade-up">
               <Link href="/" className="muted">
                 ← 홈으로
