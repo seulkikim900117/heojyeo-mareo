@@ -250,3 +250,12 @@ select:focus {
     transform: none;
   }
 }
+
+
+/* ---------- PC(넓은 화면) 레이아웃 ---------- */
+@media (min-width: 860px) {
+   .wrap-wide { max-width: 920px; }
+   .wrap-wide .fade-up { display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px; align-items: start; }
+   .wrap-wide .fade-up > a, .wrap-wide .fade-up > h1, .wrap-wide .fade-up > h2, .wrap-wide .fade-up > p, .wrap-wide .fade-up > div:not(.card) { grid-column: 1 / -1; }
+   .wrap-wide .fade-up > button, .wrap-wide .fade-up > div:has(> .btn) { grid-column: 1 / -1; width: 100%; max-width: 480px; margin-left: auto; margin-right: auto; }
+}
